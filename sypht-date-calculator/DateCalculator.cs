@@ -26,8 +26,7 @@ namespace sypht_date_calculator
 			var year = integerDateParts[2];
 
 			var numberOfLeapYearsBeforeThisYear = (year - 1) / 4;
-			var numberOfDaysInLeapYearsBeforeThisYear = numberOfLeapYearsBeforeThisYear * 366;
-			var numberOfNonLeapYearDaysBeforeThisYear = (year - numberOfLeapYearsBeforeThisYear - 1) * 365;
+			var numberOfDaysBeforeThisYear = (year - 1) * 365 + numberOfLeapYearsBeforeThisYear;
 
 			var numberOfDaysBeforeThisMonth = 0;
 
@@ -38,7 +37,7 @@ namespace sypht_date_calculator
 
 			var numberOfDaysInThisYear = numberOfDaysBeforeThisMonth + day;
 
-			return numberOfDaysInLeapYearsBeforeThisYear + numberOfNonLeapYearDaysBeforeThisYear + numberOfDaysInThisYear;
+			return numberOfDaysBeforeThisYear + numberOfDaysInThisYear;
 		}
 
 		private int[] ParseDateParts(string date)
