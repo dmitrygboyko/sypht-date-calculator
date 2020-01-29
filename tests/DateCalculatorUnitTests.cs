@@ -13,6 +13,7 @@ namespace tests
 		[InlineData("03/08/2018", "04/08/2018", 0)]
 		[InlineData("03/08/2018", "03/08/2018", 0)]
 		[InlineData("01/01/2000", "03/01/2000", 1)]
+		[InlineData("28/02/2020", "01/03/2020", 1)]
 		public void Calculate_DateDifferenceCorrectly_When_DatesAreCorrect(string date1, string date2, int difference)
 		{
 			var dateCalculator = new DateCalculator();

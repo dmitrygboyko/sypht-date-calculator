@@ -33,6 +33,11 @@ namespace sypht_date_calculator
 			for(var i = 0; i < month - 1; i++)
 			{
 				numberOfDaysBeforeThisMonth += monthDaysArray[i];
+
+				if (year%4 == 0 && i == 1)
+				{
+					numberOfDaysBeforeThisMonth += 1;
+				}
 			}
 
 			var numberOfDaysInThisYear = numberOfDaysBeforeThisMonth + day;
